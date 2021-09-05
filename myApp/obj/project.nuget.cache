@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OZ/XtQ3p6St6BRaRTOdXCxLX9kL7sGaahHCsgryaok7O+ipNxeGJdPQHfB6jMm8vXGvYUplw6Ud9B70ye6RwLw==",
+  "dgSpecHash": "dFfnOUs+zGJ0CmdM90cF6xEJ9oYFACoHvHUeNrR8d5dxp4dB0bLnSEUOHl84H7z/XG9jEv2QrKg1dVLGq7hlGQ==",
   "success": true,
-  "projectFilePath": "C:\\development\\projetos\\dotnet\\myApp\\myApp.csproj",
+  "projectFilePath": "C:\\development\\projetos\\dotnet\\soap-ws-aspnet\\myApp\\myApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
