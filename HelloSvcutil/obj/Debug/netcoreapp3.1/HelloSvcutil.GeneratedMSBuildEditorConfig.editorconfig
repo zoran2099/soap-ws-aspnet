@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = HelloSvcutil
+build_property.ProjectDir = C:\development\projetos\dotnet\soap-ws-aspnet\HelloSvcutil\

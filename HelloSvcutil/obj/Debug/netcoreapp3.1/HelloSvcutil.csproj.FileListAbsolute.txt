@@ -1,0 +1,6 @@
+C:\development\projetos\dotnet\soap-ws-aspnet\HelloSvcutil\obj\Debug\netcoreapp3.1\HelloSvcutil.csproj.AssemblyReference.cache
+C:\development\projetos\dotnet\soap-ws-aspnet\HelloSvcutil\obj\Debug\netcoreapp3.1\HelloSvcutil.GeneratedMSBuildEditorConfig.editorconfig
+C:\development\projetos\dotnet\soap-ws-aspnet\HelloSvcutil\obj\Debug\netcoreapp3.1\HelloSvcutil.AssemblyInfoInputs.cache
+C:\development\projetos\dotnet\soap-ws-aspnet\HelloSvcutil\obj\Debug\netcoreapp3.1\HelloSvcutil.AssemblyInfo.cs
+C:\development\projetos\dotnet\soap-ws-aspnet\HelloSvcutil\obj\Debug\netcoreapp3.1\HelloSvcutil.csproj.CoreCompileInputs.cache
+C:\development\projetos\dotnet\soap-ws-aspnet\HelloSvcutil\obj\Debug\netcoreapp3.1\HelloSvcutil.MvcApplicationPartsAssemblyInfo.cache

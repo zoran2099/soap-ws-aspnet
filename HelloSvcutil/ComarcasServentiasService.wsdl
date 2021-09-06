@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://stubs.tribunal.djows.bb.com.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ComarcasServentiasService" targetNamespace="http://stubs.tribunal.djows.bb.com.br/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://stubs.tribunal.djows.bb.com.br/" elementFormDefault="unqualified" targetNamespace="http://stubs.tribunal.djows.bb.com.br/" version="1.0">
+
+  <xs:element name="retornarServentiasPorComarca" type="tns:retornarServentiasPorComarca"/>
+
+  <xs:element name="retornarServentiasPorComarcaResponse" type="tns:retornarServentiasPorComarcaResponse"/>
+
+  <xs:element name="retornarTodasComarcas" type="tns:retornarTodasComarcas"/>
+
+  <xs:element name="retornarTodasComarcasResponse" type="tns:retornarTodasComarcasResponse"/>
+
+  <xs:element name="retornoComarcaWS" type="tns:retornoComarcaWS"/>
+
+  <xs:element name="retornoServentiaWS" type="tns:retornoServentiaWS"/>
+
+  <xs:complexType name="retornarTodasComarcas">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="retornarTodasComarcasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:retornoComarcaWS"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retornoComarcaWS">
+    <xs:complexContent>
+      <xs:extension base="tns:retornoBase">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="listaComarcas" nillable="true" type="tns:comarcaWS"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="retornoBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoRetorno" type="xs:int"/>
+      <xs:element minOccurs="0" name="mensagemTecnica" type="xs:string"/>
+      <xs:element minOccurs="0" name="mensagemUsuario" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="comarcaWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:int"/>
+      <xs:element minOccurs="0" name="instancia" type="xs:int"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retornarServentiasPorComarca">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoComarca" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retornarServentiasPorComarcaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:retornoServentiaWS"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retornoServentiaWS">
+    <xs:complexContent>
+      <xs:extension base="tns:retornoBase">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="listaServentias" nillable="true" type="tns:serventiaWS"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="serventiaWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:int"/>
+      <xs:element minOccurs="0" name="codigoComarca" type="xs:int"/>
+      <xs:element minOccurs="0" name="instancia" type="xs:int"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="retornarTodasComarcasResponse">
+    <wsdl:part element="tns:retornarTodasComarcasResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retornarServentiasPorComarca">
+    <wsdl:part element="tns:retornarServentiasPorComarca" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retornarServentiasPorComarcaResponse">
+    <wsdl:part element="tns:retornarServentiasPorComarcaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retornarTodasComarcas">
+    <wsdl:part element="tns:retornarTodasComarcas" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ComarcasServentias">
+    <wsdl:operation name="retornarTodasComarcas">
+      <wsdl:input message="tns:retornarTodasComarcas" name="retornarTodasComarcas">
+    </wsdl:input>
+      <wsdl:output message="tns:retornarTodasComarcasResponse" name="retornarTodasComarcasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarServentiasPorComarca">
+      <wsdl:input message="tns:retornarServentiasPorComarca" name="retornarServentiasPorComarca">
+    </wsdl:input>
+      <wsdl:output message="tns:retornarServentiasPorComarcaResponse" name="retornarServentiasPorComarcaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ComarcasServentiasServiceSoapBinding" type="tns:ComarcasServentias">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="retornarTodasComarcas">
+      <soap:operation soapAction="retornarTodasComarcas" style="document"/>
+      <wsdl:input name="retornarTodasComarcas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retornarTodasComarcasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarServentiasPorComarca">
+      <soap:operation soapAction="retornarServentiasPorComarca" style="document"/>
+      <wsdl:input name="retornarServentiasPorComarca">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="retornarServentiasPorComarcaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ComarcasServentiasService">
+    <wsdl:port binding="tns:ComarcasServentiasServiceSoapBinding" name="ComarcasServentiasPort">
+      <soap:address location="http://localhost:8083/siscondjws_tjgo/comarcasServentiasService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
